@@ -1,0 +1,192 @@
+/* =========================================================
+   Diya Kamadoli - Personal Website
+   Palette: navy + sand + soft rose on warm cream
+   ========================================================= */
+
+:root {
+    --navy:  #14283F;   /* main dark colour */
+    --navy2: #1D3A5A;   /* lighter navy for gradients */
+    --slate: #526A82;   /* secondary text */
+    --sand:  #D6BFA0;   /* accent / borders */
+    --rose:  #8A5A5F;   /* small highlights */
+    --cream: #F5F2EC;   /* page background */
+    --ink:   #243D55;   /* body text */
+    --line:  #E8E1D6;   /* soft dividers */
+    --shadow: 0 18px 45px rgba(20, 40, 63, 0.12);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    color: var(--ink);
+    line-height: 1.65;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* soft glow in two corners so the page isn't flat */
+    background:
+        radial-gradient(900px 420px at 90% -5%, rgba(214, 191, 160, 0.40), transparent 60%),
+        radial-gradient(700px 420px at -10% 35%, rgba(82, 106, 130, 0.12), transparent 60%),
+        var(--cream);
+}
+
+h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; color: var(--navy); line-height: 1.25; }
+a { color: inherit; }
+img { display: block; max-width: 100%; }
+
+/* ---------- Navigation ---------- */
+.site-header { position: sticky; top: 0; z-index: 10; background: var(--navy); border-bottom: 3px solid var(--sand); }
+.navbar { max-width: 1100px; margin: 0 auto; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; }
+.logo { font-family: 'Playfair Display', Georgia, serif; color: var(--sand); font-size: 28px; }
+.nav-links { display: flex; list-style: none; gap: 30px; }
+.nav-links a { text-decoration: none; color: #fff; font-size: 15px; padding: 6px 0; border-bottom: 2px solid transparent; transition: 0.3s; }
+.nav-links a:hover, .nav-links a.active { color: var(--sand); border-bottom-color: var(--sand); }
+
+/* ---------- Shared layout ---------- */
+.wrap { flex: 1; width: 100%; max-width: 1100px; margin: 0 auto; padding: 44px 24px 20px; }
+
+.eyebrow { color: var(--rose); letter-spacing: 3px; font-size: 12px; font-weight: 600; text-transform: uppercase; margin-bottom: 12px; }
+
+/* Buttons */
+.btn { display: inline-block; background: var(--navy); color: #fff; padding: 12px 26px; text-decoration: none; border: 2px solid var(--navy); border-radius: 999px; cursor: pointer; font: 500 15px 'Inter', Arial, sans-serif; margin: 5px 8px 5px 0; transition: 0.3s; }
+.btn:hover { background: var(--slate); border-color: var(--slate); transform: translateY(-2px); }
+.btn-outline { background: transparent; color: var(--navy); }
+.btn-outline:hover { background: var(--navy); border-color: var(--navy); color: #fff; }
+
+/* Keyboard focus */
+a:focus-visible, button:focus-visible { outline: 3px solid var(--sand); outline-offset: 3px; }
+
+/* Gentle fade-in when a page loads */
+.fade-up { animation: fadeUp 0.7s ease both; animation-delay: var(--d, 0s); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+
+/* Chips (small rounded tags) */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 6px; }
+.chips span { font-size: 12.5px; padding: 4px 12px; border-radius: 999px; background: rgba(214, 191, 160, 0.16); border: 1px solid rgba(214, 191, 160, 0.55); color: #F1E7D8; }
+.chips-light span { background: #fff; border-color: var(--sand); color: var(--navy); font-size: 14px; padding: 6px 16px; }
+
+/* ---------- Home page ---------- */
+.hero { display: grid; grid-template-columns: 1.25fr 1fr; gap: 60px; align-items: center; padding: 20px 0 50px; }
+.hero h1 { font-size: 50px; margin-bottom: 10px; }
+.hero h1 span { color: var(--rose); }
+.hero h3 { font-family: 'Inter', Arial, sans-serif; font-weight: 500; font-size: 18px; color: var(--slate); margin-bottom: 20px; }
+.intro { font-size: 16.5px; margin-bottom: 28px; max-width: 540px; }
+
+/* Arch-shaped photo with an offset outline behind it */
+.photo-frame { position: relative; width: min(100%, 360px); margin: 0 auto; }
+.photo-frame::before { content: ""; position: absolute; inset: 18px -18px -18px 18px; border: 2px solid var(--sand); border-radius: 180px 180px 24px 24px; }
+.photo-frame img { position: relative; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 15%; border-radius: 180px 180px 24px 24px; box-shadow: var(--shadow); background: var(--sand); }
+
+/* Highlight cards */
+.highlights { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.stat { background: #fff; border-radius: 14px; padding: 22px 18px; text-align: center; border-top: 3px solid var(--sand); box-shadow: 0 8px 24px rgba(20, 40, 63, 0.07); transition: 0.3s; }
+.stat:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+.stat strong { display: block; font-family: 'Playfair Display', Georgia, serif; font-size: 24px; color: var(--navy); }
+.stat span { font-size: 13px; color: var(--slate); }
+
+/* ---------- Resume page ---------- */
+.page-actions { text-align: right; margin-bottom: 14px; }
+
+.resume-card { display: grid; grid-template-columns: 310px 1fr; background: #fff; border-radius: 18px; overflow: hidden; box-shadow: var(--shadow); }
+
+/* Left sidebar */
+.resume-side { background: linear-gradient(180deg, var(--navy) 0%, var(--navy2) 100%); color: #E6ECF2; padding: 38px 28px; }
+.avatar { width: 190px; height: 190px; margin: 0 auto 20px; border-radius: 50%; object-fit: cover; object-position: 50% 22%; border: 4px solid var(--sand); box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3); background: var(--sand); }
+.resume-side h1 { color: #fff; font-size: 26px; text-align: center; }
+.role { color: var(--sand); text-align: center; font-size: 14px; margin: 6px 0 26px; }
+.resume-side h2 { color: var(--sand); font-family: 'Inter', Arial, sans-serif; font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase; margin: 26px 0 12px; padding-bottom: 8px; border-bottom: 1px solid rgba(214, 191, 160, 0.35); }
+.contact-list, .side-list { list-style: none; }
+.contact-list li { margin-bottom: 10px; font-size: 14px; }
+.contact-list span { display: block; font-size: 11px; color: var(--sand); text-transform: uppercase; letter-spacing: 1px; }
+.contact-list a { text-decoration: none; word-break: break-all; }
+.contact-list a:hover { color: var(--sand); }
+.skill-label { font-size: 12px; color: #A9B7C6; margin: 12px 0 6px; }
+.side-list li { font-size: 13.5px; margin-bottom: 10px; padding-left: 14px; position: relative; }
+.side-list li::before { content: ""; position: absolute; left: 0; top: 9px; width: 6px; height: 6px; border-radius: 50%; background: var(--sand); }
+.side-text { font-size: 13.5px; }
+
+/* Right column */
+.resume-main { padding: 38px 40px; }
+.resume-section { margin-bottom: 30px; }
+.resume-section:last-child { margin-bottom: 0; }
+.resume-section h2 { font-size: 21px; margin-bottom: 14px; display: flex; align-items: center; gap: 12px; }
+.resume-section h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.resume-section h3 { font-size: 17px; color: var(--slate); margin-bottom: 4px; }
+.resume-section p { margin-bottom: 6px; }
+.details { margin-bottom: 16px; }
+.project { border-left: 3px solid var(--sand); padding: 4px 0 4px 16px; margin-bottom: 14px; }
+
+/* Lists with small tick marks */
+.tick-list { list-style: none; }
+.tick-list li { position: relative; padding-left: 24px; margin-bottom: 8px; }
+.tick-list li::before { content: ""; position: absolute; left: 3px; top: 8px; width: 6px; height: 11px; border: solid var(--rose); border-width: 0 2px 2px 0; transform: rotate(45deg) scale(0.8); }
+
+/* ---------- Bio-data page ---------- */
+.bio-hero { display: grid; grid-template-columns: 320px 1fr; gap: 44px; align-items: center; background: #fff; border-radius: 18px; padding: 36px; box-shadow: var(--shadow); }
+.bio-photo img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 15%; border-radius: 16px; border: 4px solid var(--sand); box-shadow: 0 12px 30px rgba(20, 40, 63, 0.18); background: var(--sand); }
+.bio-info h1 { font-size: 38px; }
+.bio-info .role { text-align: left; color: var(--slate); margin: 4px 0 22px; font-size: 15px; }
+.bio-info h2 { font-size: 20px; margin-bottom: 8px; }
+
+.bio-row { display: grid; grid-template-columns: 38% 62%; padding: 11px 6px; border-bottom: 1px solid var(--line); }
+.bio-row strong { color: var(--navy); font-weight: 600; font-size: 14.5px; }
+.bio-row span { color: var(--slate); }
+.bio-row a { color: var(--slate); text-decoration: none; border-bottom: 1px solid var(--sand); word-break: break-all; }
+.bio-row a:hover { color: var(--navy); }
+
+.bio-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 24px; margin-top: 24px; }
+.bio-card { background: #fff; border-radius: 18px; padding: 30px 32px; box-shadow: 0 8px 24px rgba(20, 40, 63, 0.07); }
+.bio-card h2 { font-size: 20px; margin-bottom: 18px; }
+
+/* Education timeline: vertical line with dots */
+.timeline { list-style: none; border-left: 2px solid var(--sand); margin-left: 6px; }
+.timeline li { position: relative; padding: 0 0 22px 24px; }
+.timeline li:last-child { padding-bottom: 0; }
+.timeline li::before { content: ""; position: absolute; left: -8px; top: 5px; width: 14px; height: 14px; border-radius: 50%; background: var(--rose); border: 3px solid #fff; box-shadow: 0 0 0 1px var(--sand); }
+.timeline h3 { font-size: 17px; margin-bottom: 2px; }
+.timeline p { color: var(--slate); font-size: 14.5px; }
+
+/* ---------- Footer ---------- */
+footer { background: var(--navy); color: var(--cream); text-align: center; padding: 18px; margin-top: 40px; font-size: 14px; border-top: 3px solid var(--sand); }
+
+/* ---------- Tablet / mobile ---------- */
+@media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+    .hero h1 { font-size: 40px; }
+    .intro { margin-left: auto; margin-right: auto; }
+    .photo-frame { order: -1; width: min(70%, 300px); }
+    .highlights { grid-template-columns: repeat(2, 1fr); }
+    .resume-card { grid-template-columns: 1fr; }
+    .bio-hero { grid-template-columns: 1fr; padding: 26px; gap: 28px; }
+    .bio-photo { width: min(70%, 280px); margin: 0 auto; }
+    .bio-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+    .navbar { flex-direction: column; gap: 8px; padding: 12px; }
+    .nav-links { gap: 20px; }
+    .wrap { padding: 26px 14px 10px; }
+    .resume-main, .resume-side { padding: 28px 22px; }
+    .bio-row { grid-template-columns: 1fr; gap: 2px; }
+    .page-actions { text-align: center; }
+}
+
+/* Respect people who turn animations off */
+@media (prefers-reduced-motion: reduce) {
+    .fade-up { animation: none; }
+    * { transition: none !important; }
+}
+
+/* ---------- Print (Ctrl+P / Print Resume button) ---------- */
+@page { margin: 10mm; }
+@media print {
+    body { background: #fff; }
+    .site-header, footer, .page-actions { display: none; }
+    .wrap { padding: 0; max-width: 100%; }
+    .fade-up { animation: none; }
+    .resume-card { box-shadow: none; border-radius: 0; grid-template-columns: 270px 1fr; }
+    .resume-side, .avatar, .chips span { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .resume-side { padding: 24px 20px; }
+    .resume-main { padding: 24px 26px; }
+    .resume-section, .project { break-inside: avoid; }
+}

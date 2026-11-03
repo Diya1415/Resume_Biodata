@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bio-data of Diya Kamadoli: personal information, education and interests.">
+    <title>Bio-data | Diya Kamadoli</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2314283F'/%3E%3Ctext x='50' y='66' font-size='50' text-anchor='middle' fill='%23D6BFA0' font-family='Arial' font-weight='bold'%3EDK%3C/text%3E%3C/svg%3E">
+
+    <!-- Google Fonts: Playfair Display (headings) + Inter (text) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styleweb1.css">
+
+    <!-- jQuery CDN (loaded before our script) -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="site-header">
+        <nav class="navbar" aria-label="Main navigation">
+            <h2 class="logo">DK.</h2>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="biodata.html">Bio-data</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="wrap">
+
+        <!-- Top card: photo + personal information -->
+        <section class="bio-hero fade-up">
+            <figure class="bio-photo">
+                <img src="images/profile.jpg" alt="Portrait of Diya Kamadoli" width="640" height="800">
+            </figure>
+
+            <div class="bio-info">
+                <p class="eyebrow">Bio-data</p>
+                <h1>Diya Kamadoli</h1>
+                <p class="role">Computer Science and Engineering Student</p>
+
+                <h2>Personal Information</h2>
+                <div class="biodata-table">
+                    <div class="bio-row">
+                        <strong>Full Name</strong>
+                        <span>Diya Kamadoli</span>
+                    </div>
+                    <div class="bio-row">
+                        <strong>Date of Birth</strong>
+                        <span>15th April, 2005</span>
+                    </div>
+                    <div class="bio-row">
+                        <strong>Gender</strong>
+                        <span>Female</span>
+                    </div>
+                    <div class="bio-row">
+                        <strong>Nationality</strong>
+                        <span>Indian</span>
+                    </div>
+                    <div class="bio-row">
+                        <strong>Languages Known</strong>
+                        <span>English, Hindi, Kannada</span>
+                    </div>
+                    <div class="bio-row">
+                        <strong>Location</strong>
+                        <span>Hubballi, Karnataka</span>
+                    </div>
+                    <div class="bio-row">
+                        <strong>Email</strong>
+                        <span><a href="mailto:diya25614@gmail.com">diya25614@gmail.com</a></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="bio-grid">
+
+            <!-- Education as a simple timeline -->
+            <section class="bio-card fade-up" style="--d:.15s">
+                <h2>Educational Background</h2>
+                <ul class="timeline">
+                    <li>
+                        <h3>Bachelor of Engineering</h3>
+                        <p>Computer Science and Engineering</p>
+                        <p>KLE Institute of Technology, Hubballi</p>
+                        <p>CGPA: 9.12</p>
+                    </li>
+                    <li>
+                        <h3>Pre-University Education</h3>
+                        <p>RLS Institute of Science, Belgaum</p>
+                    </li>
+                    <li>
+                        <h3>School Education</h3>
+                        <p>Angadi International School, Belgaum</p>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Hobbies -->
+            <section class="bio-card fade-up" style="--d:.3s">
+                <h2>Hobbies &amp; Personal Interests</h2>
+                <div class="chips chips-light">
+                    <span>Reading</span>
+                    <span>Artificial Intelligence and Machine Learning</span>
+                    <span>Deep Learning</span>
+                    <span>Exploring Emerging Technologies</span>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; <span id="year"></span> Diya Kamadoli. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
